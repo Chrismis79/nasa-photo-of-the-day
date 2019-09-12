@@ -1,14 +1,22 @@
 import React from "react";
+import NasaGrid from "../src/components/NasaGrid";
 import "./App.css";
 
-function App() {
+function App(props) {
   return (
+    <>
     <div className="App">
-      <p>
-        Read through the instructions in the README.md file to build your NASA
-        app! Have fun 🚀!
-      </p>
+      <h1>
+       NASA Photo of the Day!
+      </h1>
+    </div>  
+    <div className="card-container">
+      <NasaGrid key={props.date}
+                photo={props.photo}
+                 />
     </div>
+    
+    </>
   );
 }
 
