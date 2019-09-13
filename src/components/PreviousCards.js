@@ -1,22 +1,20 @@
 import React from "react";
 import styled from "styled-components";
+import {Text} from "./NasaCard";
 
-
-const PhotoOfDay = styled.img`
+const PhotoOfPrevDays = styled.img`
     max-width: 900px;
     max-height: 1000px;
     object-fit: scale;
     flex-shrink: 2;
     margin: 2% 0;
 `;
-export const Text = styled.p`
-    padding-bottom: ${props => (props.primary ? "2%" : null)};
-`;
-const NasaCard = props => {
+
+const PreviousCards = props => {
     return (
         <>
         <div key={props.date}>
-            <PhotoOfDay className="apodImg" alt="NASA photo of the Day" src={props.photo}/>
+            <PhotoOfPrevDays alt='NASA photo of the day'src={props.photo}/>
 
         </div>
     
@@ -27,6 +25,6 @@ const NasaCard = props => {
         </div>
         </>
     );
-};
+}
 
-export default NasaCard;
+export default PreviousCards;

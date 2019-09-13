@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import NasaGrid from "../src/components/NasaGrid";
+import PreviousGrid from "../src/components/PreviousGrid";
 // import "./App.css";
 
 const ContainerDiv = styled.div`
@@ -16,6 +17,13 @@ const DivWrapper = styled.div`
 `;
 const Heading = styled.h1`
   color: white;
+`;
+const CardWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 40%;
+    flex-wrap: wrap;
 `;
 
 
@@ -34,6 +42,11 @@ function App(props) {
                 photo={props.photo}
                  />
     </DivWrapper>
+    <CardWrapper>
+
+    </CardWrapper>
+      <PreviousGrid key={props.dates}
+                    photos={props.photos}/>
     
     </ContainerDiv>
   );
