@@ -3,14 +3,14 @@ import NasaCard from "./NasaCard";
 import axios from "axios";
 
 function NasaGrid() {
-    const [title, setTitle] = useState("");
-    const [photo, setPhoto] = useState("");
-    const [date, setDate] = useState("");
-    const [desc, setDesc] = useState("");
+    const [title, setTitle] = useState([]);
+    const [photo, setPhoto] = useState([]);
+    const [date, setDate] = useState([]);
+    const [desc, setDesc] = useState([]);
     
     
     useEffect(() => {
-        axios.get('https://api.nasa.gov/planetary/apod?api_key=vkT7ub2IM8cvNsxxL3QS6sO0bn5FMJjGXPkdxzsl')
+        axios.get(`https://api.nasa.gov/planetary/apod?api_key=vkT7ub2IM8cvNsxxL3QS6sO0bn5FMJjGXPkdxzsl`)
              .then(response => {
                  console.log(response.data);
                  setTitle(response.data.title);
@@ -25,14 +25,16 @@ function NasaGrid() {
 
     return (
         <div className="img-container">
-            <NasaCard key={date}
+         
+             <NasaCard key={date}
                       title={title}
                       photo={photo}
                       date={date}
                       desc={desc}/>;
-
+          
         </div>
-    )
-}
+    );
+}  
+
 
 export default NasaGrid;
