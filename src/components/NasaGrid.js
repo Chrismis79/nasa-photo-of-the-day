@@ -24,7 +24,7 @@ function NasaGrid() {
     }, [])
 
     return (
-        <div className="img-container">
+        <div>
          
              <NasaCard key={date}
                       title={title}

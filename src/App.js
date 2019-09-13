@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import NasaGrid from "../src/components/NasaGrid";
 import PreviousGrid from "../src/components/PreviousGrid";
+
 // import "./App.css";
 
 const ContainerDiv = styled.div`
@@ -20,15 +21,26 @@ const Heading = styled.h1`
 `;
 const CardWrapper = styled.div`
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: 100%;
-    flex-wrap: wrap;
+    
+    align-items: center;
+    flex-flow: column wrap;
+    width: 1000px;
+    
+    margin: 0 auto;
+    border: 1px solid green;
+`;
+const CardHolder = styled.div`
+    width: 80%;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 `;
 
 
 function App(props) {
   return (
+    <>
     <ContainerDiv>
 
       <DivWrapper>
@@ -36,19 +48,24 @@ function App(props) {
           NASA Photo of the Day
         </Heading>
 
-    </DivWrapper>  
-    <DivWrapper>
-      <NasaGrid key={props.date}
-                photo={props.photo}
-                 />
-    </DivWrapper>
-    <CardWrapper>
+      </DivWrapper> 
 
-    </CardWrapper>
-      <PreviousGrid key={props.dates}
-                    photos={props.photos}/>
-    
+      <DivWrapper>
+        <NasaGrid key={props.date}
+                  photo={props.photo}
+                 />
+      </DivWrapper>
     </ContainerDiv>
+    
+    <CardWrapper>
+      <CardHolder>
+         <PreviousGrid key={props.dates}
+                    photos={props.photos}/>
+      </CardHolder>
+    </CardWrapper>
+    </>
+    
+    
   );
 }
 
