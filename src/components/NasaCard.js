@@ -10,7 +10,10 @@ const PhotoOfDay = styled.img`
     margin: 2% 0;
 `;
 export const Text = styled.p`
-    padding-bottom: ${props => (props.primary ? "2%" : null)};
+    border: 2px solid grey;
+    padding: 2%;
+    background: white;
+    color: #282c34;
 `;
 const NasaCard = props => {
     return (
@@ -21,8 +24,8 @@ const NasaCard = props => {
         </div>
     
         <div>        
-          <Text>{props.title}</Text>                
-          <Text>Today's date: {props.date}</Text>
+          <p>{props.title}</p>                
+          <p>Today's date: {props.date}</p>
           <Text primary>{props.desc}</Text>         
         </div>
         </>

@@ -30,7 +30,7 @@ function NasaGrid() {
                       title={title}
                       photo={photo}
                       date={date}
-                      desc={desc}/>;
+                      desc={desc}/>
           
         </div>
     );

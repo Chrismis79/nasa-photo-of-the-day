@@ -19,9 +19,9 @@ const PreviousCards = props => {
         </div>
     
         <div>        
-          <Text>{props.title}</Text>                
-          <Text>Today's date: {props.date}</Text>
-          <Text primary>{props.desc}</Text>         
+          <p>{props.title}</p>                
+          <p>Today's date: {props.date}</p>
+          <Text>{props.desc}</Text>         
         </div>
         </>
     );

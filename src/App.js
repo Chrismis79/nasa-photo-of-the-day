@@ -22,7 +22,7 @@ const CardWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 40%;
+    width: 100%;
     flex-wrap: wrap;
 `;
 
