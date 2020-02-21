@@ -27,11 +27,10 @@ const CardWrapper = styled.div`
     width: 1000px;
     
     margin: 0 auto;
-    border: 1px solid green;
+   
 `;
 const CardHolder = styled.div`
     width: 80%;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -39,6 +38,7 @@ const CardHolder = styled.div`
 
 
 function App(props) {
+  console.log("App props:", props)
   return (
     <>
     <ContainerDiv>

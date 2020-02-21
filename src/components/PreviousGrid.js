@@ -1,7 +1,8 @@
 import React, {useState, useEffect} from "react";
-import styled from "styled-components";
+
 import PreviousCards from "./PreviousCards";
 import axios from "axios";
+import {Container, Row} from 'reactstrap';
 
 
 
@@ -25,24 +26,23 @@ function PreviousGrid() {
             }, [])      
 
     return (
-        <div>
-        {photoArray.map(item => {
-            return <PreviousCards key={item.date}
-                      photos={item.hdurl} 
-                      title={item.title}
-                      date={item.date}
-                      desc={item.explanation}
-                                           
-                      />;
-        })}           
-
-        </div>
+        <Container>
+            <Row>
+                {photoArray.map(item => {
+                    return <PreviousCards key={item.date}
+                            photos={item.hdurl} 
+                            title={item.title}
+                            date={item.date}
+                            desc={item.explanation}
+                                                
+                            />;
+                })}           
+            </Row>
+        </Container>
         
         
     );
     
 }
-
-
 
 export default PreviousGrid;

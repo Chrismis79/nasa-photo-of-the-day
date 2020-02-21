@@ -1,29 +1,25 @@
 import React from "react";
-import styled from "styled-components";
-import {Text} from "./NasaCard";
 
-const PhotoOfPrevDays = styled.img`
-    max-width: 80%;
-    max-height: 800px;
-    object-fit: scale;
-    flex-shrink: 2;
-    
-`;
+import {Col, Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle} from "reactstrap";
+  
 
 const PreviousCards = props => {
     return (
-        <>
-        <div key={props.date}>
-            <PhotoOfPrevDays alt='NASA photo of the day'src={props.photos}/>
-
-        </div>
-    
-        <div>        
-          <p>{props.title}</p>                
-          <p>Date: {props.date}</p>
-          <Text>{props.desc}</Text>         
-        </div>
-        </>
+        <Col sm="12" md="6">
+            <Card>
+            <CardBody>
+              <CardTitle> {props.title} </CardTitle>                  
+              <CardSubtitle>Date: {props.date}</CardSubtitle>
+            </CardBody>
+                <div key={props.date}>
+                    <CardImg alt='NASA photo of the day' src={props.photos}/>
+                </div>
+            <CardBody>
+                <CardText>{props.desc}</CardText>
+            </CardBody>
+          </Card>
+        </Col>
     );
 }
 
