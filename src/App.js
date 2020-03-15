@@ -41,6 +41,7 @@ function App() {
   
   return (
     <>
+
     <ContainerDiv>
 
       <DivWrapper>
@@ -57,7 +58,7 @@ function App() {
     
     <CardWrapper>
       <CardHolder>
-         <PreviousGrid/>
+          <PreviousGrid/>
       </CardHolder>
     </CardWrapper>
     </>

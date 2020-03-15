@@ -1,7 +1,7 @@
-import React from "react";
+import React, {useState} from "react";
 
 import Media from "../components/Media";
-import {Col, Card, CardImg, CardText, CardBody,
+import {Col, Card, CardText, Button, Collapse, CardBody,
     CardTitle, CardSubtitle} from "reactstrap";
   
 
@@ -16,6 +16,12 @@ const PreviousCards = props => {
         background: "#282c34",
 
     }
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggle = () => setIsOpen(!isOpen);
+
+   
     return (
         <Col sm="12" md="6" className="mb-3">
             <Card>
@@ -27,8 +33,17 @@ const PreviousCards = props => {
                         {/* <CardImg title={props.title} mediatype={props.media_type} src={props.photo} alt={props.title}/> */}
                         <Media mediatype={props.mediatype} title={props.title} src={props.photo} alt={props.title}/>
                 </div>
+
+    <Button color="secondary" onClick={toggle} style={{ marginBottom: '1rem' }}>{isOpen ? "Close" : "Description"}</Button> 
+            
             <CardBody>
-                <CardText>{props.desc}</CardText>
+            <Collapse isOpen={isOpen}>
+              <Card>
+                 <CardBody>{props.desc}</CardBody>          
+               
+              </Card>
+            </Collapse>
+                
             </CardBody>
           </Card>
         </Col>
