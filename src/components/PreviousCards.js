@@ -30,21 +30,15 @@ const PreviousCards = props => {
               <CardSubtitle style={{color: "#fff"}}>Date: {props.date}</CardSubtitle>
             </CardBody >
                 <div key={props.date}>
-                        {/* <CardImg title={props.title} mediatype={props.media_type} src={props.photo} alt={props.title}/> */}
-                        <Media mediatype={props.mediatype} title={props.title} src={props.photo} alt={props.title}/>
+                  <Media mediatype={props.mediatype} title={props.title} src={props.photo} alt={props.title}/>
                 </div>
 
     <Button color="secondary" onClick={toggle} style={{ marginBottom: '1rem' }}>{isOpen ? "Close" : "Description"}</Button> 
             
-            <CardBody>
+           
             <Collapse isOpen={isOpen}>
-              <Card>
-                 <CardBody>{props.desc}</CardBody>          
-               
-              </Card>
+              <CardBody>{props.desc}</CardBody>          
             </Collapse>
-                
-            </CardBody>
           </Card>
         </Col>
     );

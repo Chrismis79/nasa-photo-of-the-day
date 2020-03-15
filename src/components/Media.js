@@ -13,8 +13,8 @@ const Media = props => {
             <iframe
                 alt={props.title}
                 title={props.title}
-                width={420}
-                height={315}
+                width={400}
+                height={300}
                 allowFullScreen={true}
                 src={props.src}
                 />
