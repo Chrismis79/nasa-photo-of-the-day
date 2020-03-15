@@ -1,14 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import Media from "../components/Media";
 
 
-const PhotoOfDay = styled.img`
-    max-width: 900px;
-    max-height: 1000px;
-    object-fit: scale;
-    flex-shrink: 2;
-    margin: 2% 0;
-`;
+
 export const Text = styled.p`
     border: 2px solid grey;
     padding: 2%;
@@ -16,11 +11,11 @@ export const Text = styled.p`
     color: #282c34;
 `;
 const NasaCard = props => {
+    console.log("NasaCard props:", props)
     return (
         <>
-        <div key={props.date}>
-            <PhotoOfDay className="apodImg" alt="NASA photo of the Day" src={props.photo}/>
-
+        <div className="box" key={props.date} >
+            <Media title={props.title} mediatype={props.mediatype} src={props.photo}/>
         </div>
     
         <div>        

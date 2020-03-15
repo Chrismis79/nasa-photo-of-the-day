@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import NasaCard from "./NasaCard";
+
 import axios from "axios";
 
 function NasaGrid() {
@@ -7,6 +8,7 @@ function NasaGrid() {
     const [photo, setPhoto] = useState([]);
     const [date, setDate] = useState([]);
     const [desc, setDesc] = useState([]);
+    const [mediatype, setMediaType] = useState([]);
     
     
     useEffect(() => {
@@ -14,7 +16,8 @@ function NasaGrid() {
              .then(response => {
                  console.log(response.data);
                  setTitle(response.data.title);
-                 setPhoto(response.data.hdurl);
+                 setMediaType(response.data.media_type);
+                 setPhoto(response.data.hdurl || response.data.url);
                  setDate(response.data.date);
                  setDesc(response.data.explanation);
              })
@@ -30,7 +33,8 @@ function NasaGrid() {
                       title={title}
                       photo={photo}
                       date={date}
-                      desc={desc}/>
+                      desc={desc}
+                      mediatype={mediatype}/>
           
         </div>
     );

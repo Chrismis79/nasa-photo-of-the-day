@@ -3,7 +3,7 @@ import styled from "styled-components";
 import NasaGrid from "../src/components/NasaGrid";
 import PreviousGrid from "../src/components/PreviousGrid";
 
-// import "./App.css";
+import "./App.css";
 
 const ContainerDiv = styled.div`
   width: 900px;
@@ -37,30 +37,27 @@ const CardHolder = styled.div`
 `;
 
 
-function App(props) {
-  console.log("App props:", props)
+function App() {
+  
   return (
     <>
     <ContainerDiv>
 
       <DivWrapper>
-        <Heading key={props.date}>
+        <Heading>
           NASA Photo of the Day
         </Heading>
 
       </DivWrapper> 
 
       <DivWrapper>
-        <NasaGrid key={props.date}
-                  photo={props.photo}
-                 />
+        <NasaGrid/>
       </DivWrapper>
     </ContainerDiv>
     
     <CardWrapper>
       <CardHolder>
-         <PreviousGrid key={props.dates}
-                    photos={props.photos}/>
+         <PreviousGrid/>
       </CardHolder>
     </CardWrapper>
     </>
